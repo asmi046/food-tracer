@@ -75,8 +75,8 @@
 
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue'
-import { ref, reactive } from 'vue'
-import { Head } from '@inertiajs/vue3'
+import { ref } from 'vue'
+import { Head, useForm } from '@inertiajs/vue3'
 import {
     NGrid,
     NGi,
@@ -100,7 +100,7 @@ const message = useMessage()
 const formRef = ref(null)
 const loading = ref(false)
 
-const form = reactive({
+const form = useForm({
     email: '',
     password: '',
     remember: false
