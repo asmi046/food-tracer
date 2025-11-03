@@ -1,0 +1,73 @@
+/* Сброс автозаполнения браузера для всех input полей */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    -webkit-text-fill-color: inherit !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+    background-color: transparent !important;
+}
+
+/* Для темной темы */
+[data-theme="dark"] input:-webkit-autofill,
+[data-theme="dark"] input:-webkit-autofill:hover,
+[data-theme="dark"] input:-webkit-autofill:focus,
+[data-theme="dark"] textarea:-webkit-autofill,
+[data-theme="dark"] textarea:-webkit-autofill:hover,
+[data-theme="dark"] textarea:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px #2d2d2d inset !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Специальные стили для Naive UI компонентов */
+.n-input .n-input__input-el:-webkit-autofill,
+.n-input .n-input__input-el:-webkit-autofill:hover,
+.n-input .n-input__input-el:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px var(--n-color, white) inset !important;
+    -webkit-text-fill-color: var(--n-text-color, inherit) !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
+/* Для темной темы Naive UI */
+.n-config-provider[data-theme="dark"] .n-input .n-input__input-el:-webkit-autofill,
+.n-config-provider[data-theme="dark"] .n-input .n-input__input-el:-webkit-autofill:hover,
+.n-config-provider[data-theme="dark"] .n-input .n-input__input-el:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px var(--n-color, #2d2d2d) inset !important;
+    -webkit-text-fill-color: var(--n-text-color, #ffffff) !important;
+}
+
+/* Скрытие иконок автозаполнения */
+input::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+    display: none !important;
+    pointer-events: none;
+    height: 0;
+    width: 0;
+    margin: 0;
+}
+
+/* Дополнительные стили для различных состояний полей */
+input:-webkit-autofill::first-line {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+/* Сброс для всех типов полей */
+input[type="text"]:-webkit-autofill,
+input[type="email"]:-webkit-autofill,
+input[type="password"]:-webkit-autofill,
+input[type="tel"]:-webkit-autofill,
+input[type="url"]:-webkit-autofill,
+input[type="search"]:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-text-fill-color: inherit !important;
+    background-color: transparent !important;
+}

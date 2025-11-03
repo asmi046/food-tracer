@@ -1,0 +1,44 @@
+/* CSS переменные для единого дизайна */
+:root {
+    /* Основные цвета */
+    --primary-color: #18a058;
+    --secondary-color: #666;
+    --background-color: #ffffff;
+    --surface-color: #f9f9f9;
+    --text-color: #333;
+    --border-color: #e0e0e0;
+    --error-color: #d03050;
+    --success-color: #18a058;
+    --warning-color: #f0a020;
+
+    /* Отступы */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    /* Радиусы */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+
+    /* Тени */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Темная тема */
+[data-theme="dark"] {
+    --background-color: #1a1a1a;
+    --surface-color: #2d2d2d;
+    --text-color: #ffffff;
+    --border-color: #404040;
+}
+
+/* Naive UI кастомизация */
+.n-config-provider {
+    --n-font-size: 14px;
+    --n-border-radius: var(--border-radius-md);
+}
