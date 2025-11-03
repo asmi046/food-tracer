@@ -15,7 +15,9 @@
         "laravel/sanctum": "^4.0",
         "laravel/socialite": "^5.23",
         "laravel/tinker": "^2.10.1",
+        "socialiteproviders/vkid": "^5.0",
         "socialiteproviders/vkontakte": "^5.1",
+        "socialiteproviders/yandex": "^4.1",
         "tightenco/ziggy": "^2.0"
     },
     "require-dev": {

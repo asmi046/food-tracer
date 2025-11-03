@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "38979d831b72a98cd917d7bd9db6a2bd",
+    "content-hash": "1fe502d0d35c2ef4f5fadf060929bc14",
     "packages": [
         {
             "name": "brick/math",
@@ -3927,6 +3927,57 @@
             "time": "2025-02-24T19:33:30+00:00"
         },
         {
+            "name": "socialiteproviders/vkid",
+            "version": "5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/VKID.git",
+                "reference": "5cff9fb2c0d1eab8b2554df550641b8a4d644fcb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SocialiteProviders/VKID/zipball/5cff9fb2c0d1eab8b2554df550641b8a4d644fcb",
+                "reference": "5cff9fb2c0d1eab8b2554df550641b8a4d644fcb",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^8.4",
+                "socialiteproviders/manager": "^4.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\VKID\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vladimir Kharinenkov",
+                    "email": "vhar@mail.ru"
+                }
+            ],
+            "description": "VK ID OAuth2 Provider for Laravel Socialite",
+            "keywords": [
+                "laravel",
+                "oauth",
+                "provider",
+                "socialite",
+                "vkid",
+                "vkontakte"
+            ],
+            "support": {
+                "docs": "https://socialiteproviders.com/vkid",
+                "issues": "https://github.com/socialiteproviders/providers/issues",
+                "source": "https://github.com/socialiteproviders/providers"
+            },
+            "time": "2025-08-22T23:17:19+00:00"
+        },
+        {
             "name": "socialiteproviders/vkontakte",
             "version": "5.1.0",
             "source": {
@@ -3975,6 +4026,47 @@
                 "source": "https://github.com/socialiteproviders/providers"
             },
             "time": "2025-09-08T22:08:36+00:00"
+        },
+        {
+            "name": "socialiteproviders/yandex",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/Yandex.git",
+                "reference": "e8cf2c088feda1525b49cee396bd46fc96509f20"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SocialiteProviders/Yandex/zipball/e8cf2c088feda1525b49cee396bd46fc96509f20",
+                "reference": "e8cf2c088feda1525b49cee396bd46fc96509f20",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.2 || ^8.0",
+                "socialiteproviders/manager": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\Yandex\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Faust",
+                    "email": "hello@brianfaust.de"
+                }
+            ],
+            "description": "Yandex OAuth2 Provider for Laravel Socialite",
+            "support": {
+                "source": "https://github.com/SocialiteProviders/Yandex/tree/4.1.0"
+            },
+            "time": "2020-12-01T23:10:59+00:00"
         },
         {
             "name": "symfony/clock",

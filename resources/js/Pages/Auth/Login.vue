@@ -83,7 +83,7 @@ const submit = () => {
 };
 
 const redirectToVK = () => {
-    window.location.href = route('social.redirect', { provider: 'vkontakte' })
+    window.location.href = route('social.redirect', { provider: 'vkid' })
 }
 
 const redirectToYandex = () => {
