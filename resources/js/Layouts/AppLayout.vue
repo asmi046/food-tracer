@@ -1,6 +1,7 @@
 <template>
     <n-config-provider :theme="theme">
         <n-message-provider>
+            <FlashMessages />
             <div class="app-layout">
                 <main class="main-content">
                     <slot />
@@ -18,6 +19,7 @@ import {
     NSpace,
     NButton
 } from 'naive-ui'
+import FlashMessages from '@/Components/FlashMessages.vue'
 
 defineProps({
     theme: {

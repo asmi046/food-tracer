@@ -1,6 +1,6 @@
 <script setup>
-import { ref } from 'vue';
-import { Head, Link, useForm } from '@inertiajs/vue3';
+import { ref, onMounted, nextTick } from 'vue';
+import { Head, Link, useForm, usePage } from '@inertiajs/vue3';
 import {
     NGrid,
     NGi,
@@ -16,9 +16,13 @@ import {
     NAlert
 } from 'naive-ui';
 
+import AppLayout from '@/Layouts/AppLayout.vue';
+
+const page = usePage()
+
 // Убираем layout для страницы авторизации
 defineOptions({
-    layout: null
+    layout: AppLayout
 });
 
 defineProps({
@@ -200,7 +204,7 @@ const redirectToYandex = () => {
                                 </n-space>
                             </n-form-item>
 
-                            <n-divider>или</n-divider>
+                            <p>или</p>
 
                             <n-space vertical>
                                 <n-button

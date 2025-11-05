@@ -5,8 +5,21 @@ import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createApp, h } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
+import { registerSW } from 'virtual:pwa-register'
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+
+// Регистрация Service Worker
+if ('serviceWorker' in navigator) {
+    registerSW({
+        onNeedRefresh() {
+            console.log('Новая версия приложения доступна')
+        },
+        onOfflineReady() {
+            console.log('Приложение готово для работы офлайн')
+        },
+    })
+}
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,

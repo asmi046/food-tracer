@@ -50,7 +50,11 @@ class SocialAuthController extends Controller
             return redirect()->intended('/dashboard');
 
         } catch (\Exception $e) {
-            return redirect('/login')->with('error', 'Ошибка авторизации через ' . $provider);
+            \Log::error('Social auth error: ' . $e->getMessage(), [
+                'provider' => $provider,
+                'exception' => $e
+            ]);
+            return redirect('/login')->with('flash.error', 'Ошибка авторизации через ' . $provider);
         }
     }
 }
