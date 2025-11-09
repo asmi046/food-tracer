@@ -11,10 +11,13 @@ import {
     NMessageProvider,
     useMessage
 } from 'naive-ui';
+import SocialButtons from '@/Components/Socialite/SocialButtons.vue';
+import AppLayout from '@/Layouts/AppLayout.vue';
 
+const message = useMessage();
 // Убираем layout для страницы регистрации
 defineOptions({
-    layout: null
+    layout: AppLayout
 });
 
 const formRef = ref(null);
@@ -80,8 +83,8 @@ const rules = {
 };
 
 const submit = () => {
-    const message = useMessage();
-    
+
+    console.log('Submitting form...');
     formRef.value?.validate((errors) => {
         if (!errors) {
             form.post(route('register'), {
@@ -115,29 +118,35 @@ const submit = () => {
         <div class="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <div class="max-w-md w-full space-y-8">
                 <div class="text-center">
+                    <img
+                        src="/img/icon_src.webp"
+                        alt="Food Tracker Logo"
+                        class="w-16 h-16 mx-auto mb-4 drop-shadow-lg"
+                        loading="eager"
+                    />
                     <h1 class="text-3xl font-bold text-gray-900">Food Tracer</h1>
                     <p class="mt-2 text-gray-600">Система отслеживания продуктов</p>
                 </div>
 
-                <n-card 
-                    title="Регистрация" 
-                    size="large" 
+                <n-card
+                    title="Регистрация"
+                    size="large"
                     bordered
                     class="shadow-lg"
                 >
-                    <form @submit.prevent="submit">
+
                         <n-form
                             ref="formRef"
                             :model="form"
                             :rules="rules"
                             label-placement="top"
                             require-mark-placement="right-hanging"
+                            @submit.prevent="submit"
                             size="large"
                         >
-                            <n-form-item 
-                                label="Имя" 
-                                path="name" 
-                                :validation-status="form.errors.name ? 'error' : ''"
+                            <n-form-item
+                                label="Имя"
+                                path="name"
                             >
                                 <n-input
                                     v-model:value="form.name"
@@ -151,10 +160,9 @@ const submit = () => {
                                 </template>
                             </n-form-item>
 
-                            <n-form-item 
-                                label="Email" 
-                                path="email" 
-                                :validation-status="form.errors.email ? 'error' : ''"
+                            <n-form-item
+                                label="Email"
+                                path="email"
                             >
                                 <n-input
                                     v-model:value="form.email"
@@ -168,10 +176,9 @@ const submit = () => {
                                 </template>
                             </n-form-item>
 
-                            <n-form-item 
-                                label="Пароль" 
-                                path="password" 
-                                :validation-status="form.errors.password ? 'error' : ''"
+                            <n-form-item
+                                label="Пароль"
+                                path="password"
                             >
                                 <n-input
                                     v-model:value="form.password"
@@ -186,10 +193,10 @@ const submit = () => {
                                 </template>
                             </n-form-item>
 
-                            <n-form-item 
-                                label="Подтверждение пароля" 
-                                path="password_confirmation" 
-                                :validation-status="form.errors.password_confirmation ? 'error' : ''"
+                            <n-form-item
+                                label="Подтверждение пароля"
+                                path="password_confirmation"
+
                             >
                                 <n-input
                                     v-model:value="form.password_confirmation"
@@ -223,16 +230,26 @@ const submit = () => {
                                     </n-button>
                                 </n-space>
                             </n-form-item>
+
+                            <p>Вы так же может войти через:</p>
+                            <br>
+                            <SocialButtons />
                         </n-form>
-                    </form>
+
                 </n-card>
 
                 <div class="text-center">
                     <p class="text-sm text-gray-600">
-                        Уже есть аккаунт? 
-                        <Link :href="route('login')" class="font-medium text-indigo-600 hover:text-indigo-500">
+                        Уже есть аккаунт?
+
+
+                        <n-button
+                            text
+                            type="primary"
+                            @click="$inertia.visit(route('login'))"
+                        >
                             Войти
-                        </Link>
+                        </n-button>
                     </p>
                 </div>
             </div>

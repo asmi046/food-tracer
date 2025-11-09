@@ -8,7 +8,6 @@ const page = usePage()
 const message = useMessage()
 
 onMounted(() => {
-    console.log('Flash messages:', page.props.flash)
     if (page.props.flash.success) {
         message.success(page.props.flash.success)
     }

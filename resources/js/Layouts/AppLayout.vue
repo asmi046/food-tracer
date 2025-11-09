@@ -28,21 +28,3 @@ defineProps({
     }
 })
 </script>
-
-<style scoped>
-.app-layout {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.header {
-    border-bottom: 1px solid #e0e0e0;
-    background: white;
-}
-
-.main-content {
-    flex: 1;
-    padding: 24px;
-}
-</style>
